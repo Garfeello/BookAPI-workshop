@@ -8,6 +8,7 @@
             crossorigin="anonymous"></script>
     <title>Title</title>
 </head>
+<%--style="width: 35rem;--%>
 <body style="background-color: lightblue;">
 <div class="card-body d-flex justify-content-center">
     <div class="shadow p-3 mb-5 bg-white rounded w-25 p-10">
