@@ -3,14 +3,13 @@ package org.bookAPI.controller;
 import org.bookAPI.beans.Book;
 import org.bookAPI.beans.MemoryBookService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @Controller
-@RequestMapping("/books")
+@RequestMapping(path = "/books")
 public class BookController {
 
     private final MemoryBookService bookService;
@@ -20,33 +19,35 @@ public class BookController {
         this.bookService = bookService;
     }
 
+    @ResponseBody
     @GetMapping("/getBook")
     public List<Book> helloBook() {
         return bookService.getBookList();
     }
 
+    @ResponseBody
     @GetMapping("/getBook/{id}")
     public Book helloBook(@PathVariable long id) {
-        return bookService.getBookList().stream().filter(x -> x.getId() == id).findAny().orElse(null);
+        return bookService.get(id);
     }
 
-    @Primary
-    @GetMapping("/addBook")
+    @GetMapping(path = "/addBook")
     public String addBookView() {
         return "createBookForm";
     }
 
     @ResponseBody
-    @PostMapping("/addBook")
-    public String addBook(@RequestParam long id,
-                          @RequestParam String isbn,
-                          @RequestParam String title,
-                          @RequestParam String author,
-                          @RequestParam String publisher,
-                          @RequestParam String type) {
-        Book book = new Book(id, isbn, title, author, publisher, type);
-        bookService.addBook(book);
-        return "Created book " + book.toString() + " <a href=/books/addBook> Book form</a>";
+    @PostMapping(path = "/addBook")
+    public String addBook() {
+//        bookService.addBook(book);
+        return "TEST";
+    }
+
+    @ResponseBody
+    @GetMapping("/removeBook/{id}")
+    public String removeBook(@PathVariable long id) {
+        bookService.removeBook(id);
+        return "done";
     }
 
 }

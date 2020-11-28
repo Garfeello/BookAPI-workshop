@@ -9,10 +9,36 @@ import org.springframework.web.context.WebApplicationContext;
 @Scope(value = WebApplicationContext.SCOPE_SESSION, proxyMode = ScopedProxyMode.TARGET_CLASS)
 public class Book {
 
-    private Long id;
+    private static long idCounter;
+    private final long id;
     private String isbn;
     private String title;
     private String author;
+
+    public static void setIdCounter(long idCounter) {
+        Book.idCounter = idCounter;
+    }
+
+    public void setIsbn(String isbn) {
+        this.isbn = isbn;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public void setPublisher(String publisher) {
+        this.publisher = publisher;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
     private String publisher;
     private String type;
 
@@ -20,8 +46,29 @@ public class Book {
         return id;
     }
 
-    public Book(Long id, String isbn, String title, String author, String publisher, String type) {
-        this.id = id;
+    public String getIsbn() {
+        return isbn;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public String getPublisher() {
+        return publisher;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public Book(String isbn, String title, String author, String publisher, String type) {
+        idCounter++;
+        this.id = idCounter;
         this.isbn = isbn;
         this.title = title;
         this.author = author;

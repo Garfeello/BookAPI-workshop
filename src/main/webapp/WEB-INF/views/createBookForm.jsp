@@ -3,16 +3,13 @@
 <head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
           integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-            integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
-            crossorigin="anonymous"></script>
-    <title>Title</title>
+    <title>Add Book</title>
 </head>
 <body style="background-color: lightblue;">
 <div class="card-body d-flex justify-content-center">
     <div class="shadow p-3 mb-5 bg-white rounded w-25 p-10">
         <h1 style="text-align: center" class="display-4">Dodaj książkę</h1>
-        <form method="post" action="/addBook">
+        <form method="post" action="/books/addBook">
             <div class="form-group">
                 <label for="isbn">ISBN</label>
                 <input type="text" name="isbn" class="form-control" id="isbn" placeholder="ISBN">
