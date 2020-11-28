@@ -1,3 +1,4 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -30,7 +31,7 @@
                 <label for="type">Type</label>
                 <input type="text" name="type" class="form-control" id="type" placeholder="type">
             </div>
-            <button type="button" class="btn btn-success">Send</button>
+            <button type="submit" class="btn btn-success">Send</button>
         </form>
     </div>
 </div>

@@ -36,10 +36,11 @@ public class BookController {
         return "createBookForm";
     }
 
+    //RequestBody - w body zadanie json.
     @ResponseBody
     @PostMapping(path = "/addBook")
-    public String addBook() {
-//        bookService.addBook(book);
+    public String addBook(Book book) {
+        bookService.addBook(book);
         return "TEST";
     }
 
@@ -49,5 +50,6 @@ public class BookController {
         bookService.removeBook(id);
         return "done";
     }
+
 
 }

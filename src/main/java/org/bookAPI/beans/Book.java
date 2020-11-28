@@ -23,9 +23,9 @@ public class Book {
         this.isbn = isbn;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
+//    public void setTitle(String title) {
+//        this.title = title;
+//    }
 
     public void setAuthor(String author) {
         this.author = author;
@@ -70,7 +70,7 @@ public class Book {
         idCounter++;
         this.id = idCounter;
         this.isbn = isbn;
-        this.title = title;
+        this.title = null;
         this.author = author;
         this.publisher = publisher;
         this.type = type;
