@@ -21,27 +21,26 @@ public class BookController {
 
     @ResponseBody
     @GetMapping("/getBook")
-    public List<Book> helloBook() {
+    public List<Book> getBooks() {
         return bookService.getBookList();
     }
 
     @ResponseBody
     @GetMapping("/getBook/{id}")
-    public Book helloBook(@PathVariable long id) {
+    public Book getBookById(@PathVariable long id) {
         return bookService.get(id);
     }
 
-    @GetMapping(path = "/addBook")
-    public String addBookView() {
+    @RequestMapping("/addBook")
+    public String addBookForm() {
         return "createBookForm";
     }
 
     //RequestBody - w body zadanie json.
-    @ResponseBody
-    @PostMapping(path = "/addBook")
+    @PostMapping("/addBook")
     public String addBook(Book book) {
         bookService.addBook(book);
-        return "TEST";
+        return "createBookForm";
     }
 
     @ResponseBody

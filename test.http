@@ -1,0 +1,10 @@
+POST http://localhost:8080/books/addBook
+Content-Type: application/json
+
+{
+  "isbn": "32222",
+  "title": "Thinking in C#",
+  "publisher": "IT Books",
+  "type": "programming",
+  "author": "Bruce Eckel"
+}
