@@ -15,10 +15,6 @@ public class Book {
     private String title;
     private String author;
 
-    public static void setIdCounter(long idCounter) {
-        Book.idCounter = idCounter;
-    }
-
     public void setIsbn(String isbn) {
         this.isbn = isbn;
     }
@@ -66,11 +62,16 @@ public class Book {
         return type;
     }
 
+    public Book() {
+        idCounter++;
+        this.id = idCounter;
+    }
+
     public Book(String isbn, String title, String author, String publisher, String type) {
         idCounter++;
         this.id = idCounter;
         this.isbn = isbn;
-        this.title = null;
+        this.title = title;
         this.author = author;
         this.publisher = publisher;
         this.type = type;

@@ -1,5 +1,6 @@
 package org.bookAPI.beans;
 
+import org.bookAPI.interfaces.BookService;
 import org.springframework.context.annotation.Scope;
 import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Component;
@@ -13,7 +14,7 @@ import java.util.List;
 @Scope(value = WebApplicationContext.SCOPE_SESSION, proxyMode = ScopedProxyMode.TARGET_CLASS)
 public class MemoryBookService implements BookService {
 
-    private List<Book> bookList;
+    private final List<Book> bookList;
 
     public MemoryBookService() {
         this.bookList = new ArrayList<>(Arrays.asList(
@@ -43,6 +44,12 @@ public class MemoryBookService implements BookService {
     @Override
     public void removeBook(long id) {
         bookList.remove(get(id));
+    }
+
+    @Override
+    public void update(Book book) {
+        int indexOf = bookList.indexOf(this.get(book.getId()));
+        bookList.set(indexOf, book);
     }
 
 }

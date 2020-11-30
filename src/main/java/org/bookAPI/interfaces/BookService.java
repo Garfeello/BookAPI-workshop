@@ -1,7 +1,8 @@
-package org.bookAPI.beans;
+package org.bookAPI.interfaces;
+
+import org.bookAPI.beans.Book;
 
 import java.util.List;
-import java.util.Optional;
 
 public interface BookService {
 
@@ -12,4 +13,6 @@ public interface BookService {
     void removeBook(long id);
 
     Book get(long id);
+
+    void update(Book book);
 }

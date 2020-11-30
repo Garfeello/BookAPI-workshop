@@ -3,12 +3,11 @@ package org.bookAPI.controller;
 import org.bookAPI.beans.Book;
 import org.bookAPI.beans.MemoryBookService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@Controller
+@RestController
 @RequestMapping(path = "/books")
 public class BookController {
 
@@ -19,35 +18,32 @@ public class BookController {
         this.bookService = bookService;
     }
 
-    @ResponseBody
     @GetMapping("/getBook")
     public List<Book> getBooks() {
         return bookService.getBookList();
     }
 
-    @ResponseBody
     @GetMapping("/getBook/{id}")
     public Book getBookById(@PathVariable long id) {
         return bookService.get(id);
     }
 
-    @RequestMapping("/addBook")
-    public String addBookForm() {
-        return "createBookForm";
-    }
-
-    //RequestBody - w body zadanie json.
     @PostMapping("/addBook")
-    public String addBook(Book book) {
+    public Book addBook(@RequestBody Book book) {
         bookService.addBook(book);
-        return "createBookForm";
+        return book;
     }
 
-    @ResponseBody
-    @GetMapping("/removeBook/{id}")
+    @DeleteMapping("/removeBook/{id}")
     public String removeBook(@PathVariable long id) {
         bookService.removeBook(id);
-        return "done";
+        return "Deleted book with ID: " + id;
+    }
+
+    @PutMapping("/updateBook")
+    public Book updateBook(@RequestBody Book book) {
+        bookService.update(book);
+        return book;
     }
 
 

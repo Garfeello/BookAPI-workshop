@@ -2,9 +2,37 @@ POST http://localhost:8080/books/addBook
 Content-Type: application/json
 
 {
+  "isbn": "312312312321",
+  "title": "Macius in C#",
+  "publisher": "IT Books",
+  "type": "programming",
+  "author": "Bruce Eckel"
+}
+
+###
+
+# curl -X DELETE -i  http://localhost:8080/books/1
+DELETE http://localhost:8080/books/removeBook/3
+
+###
+GET http://localhost:8080/books/getBook
+
+###
+GET http://localhost:8080/books/getBook/3
+
+###UPDATE
+PUT http://localhost:8080/books/updateBook
+Content-Type: application/json
+
+{
+  "id": 4,
   "isbn": "32222",
   "title": "Thinking in C#",
   "publisher": "IT Books",
   "type": "programming",
   "author": "Bruce Eckel"
 }
+
+###
+
+
