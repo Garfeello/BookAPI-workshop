@@ -14,6 +14,9 @@ public class Book {
     private String isbn;
     private String title;
     private String author;
+    private String publisher;
+    private String type;
+
 
     public void setIsbn(String isbn) {
         this.isbn = isbn;
@@ -34,9 +37,6 @@ public class Book {
     public void setType(String type) {
         this.type = type;
     }
-
-    private String publisher;
-    private String type;
 
     public Long getId() {
         return id;
