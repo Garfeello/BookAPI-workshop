@@ -10,17 +10,15 @@ Content-Type: application/json
 }
 
 ###
-
-# curl -X DELETE -i  http://localhost:8080/books/1
 DELETE http://localhost:8080/books/removeBook/5
 
 ###
 GET http://localhost:8080/books/getAllBooks
 
 ###
-GET http://localhost:8080/books/getBook/1
+GET http://localhost:8080/books/getBook/2
 
-###UPDATE
+###
 PUT http://localhost:8080/books/updateBook
 Content-Type: application/json
 

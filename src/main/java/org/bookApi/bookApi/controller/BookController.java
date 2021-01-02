@@ -28,7 +28,7 @@ public class BookController {
 
     @PostMapping(value = "/addBook", produces = "application/json")
     private Book addBook(@RequestBody Book book) {
-       return bookRepository.save(book);
+        return bookRepository.save(book);
     }
 
     @DeleteMapping("/removeBook/{id}")
@@ -39,8 +39,6 @@ public class BookController {
 
     @PutMapping("/updateBook")
     private Book updateBook(@RequestBody Book book) {
-       return bookRepository.save(book);
+        return bookRepository.save(book);
     }
-
-
 }

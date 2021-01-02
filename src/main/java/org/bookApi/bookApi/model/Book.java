@@ -24,6 +24,7 @@ public class Book {
 
     @Size(max = 50)
     private String title;
+
     private String author;
     private String publisher;
     private String type;
