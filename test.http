@@ -2,35 +2,35 @@ POST http://localhost:8080/books/addBook
 Content-Type: application/json
 
 {
-  "isbn": "312312312321",
-  "title": "Macius in C#",
-  "publisher": "IT Books",
-  "type": "programming",
-  "author": "Bruce Eckel"
+  "isbn": "9780132350884",
+  "title": "Clean Code",
+  "author": "Robert C. Martin",
+  "publisher": "Pearson Education",
+  "type": "Educational"
 }
 
 ###
 
 # curl -X DELETE -i  http://localhost:8080/books/1
-DELETE http://localhost:8080/books/removeBook/3
+DELETE http://localhost:8080/books/removeBook/5
 
 ###
-GET http://localhost:8080/books/getBook
+GET http://localhost:8080/books/getAllBooks
 
 ###
-GET http://localhost:8080/books/getBook/3
+GET http://localhost:8080/books/getBook/1
 
 ###UPDATE
 PUT http://localhost:8080/books/updateBook
 Content-Type: application/json
 
 {
-  "id": 4,
-  "isbn": "32222",
-  "title": "Thinking in C#",
-  "publisher": "IT Books",
-  "type": "programming",
-  "author": "Bruce Eckel"
+  "id": 6,
+  "isbn": "9780739360385",
+  "title": "Harry Potter & Deathly Hollows",
+  "author": "J. K. Rowling",
+  "publisher": "Bloomsbury Pub Limited",
+  "type": "Fantasy Fiction"
 }
 
 ###
